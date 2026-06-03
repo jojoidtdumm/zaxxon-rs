@@ -252,11 +252,13 @@ async fn main() {
         let shadow_scale = 1.0 - player_altitude * 0.003;
         let shadow_offset_x = player_altitude * 0.25;
         let shadow_offset_y = player_altitude * 0.12;
+        let base_x = player_rect.x;
+        let base_y = player_rect.y;
 
         draw_texture_ex(
             &texture,
-            player_rect.x + shadow_offset_x,
-            player_rect.y + shadow_offset_y,
+            base_x + shadow_offset_x,
+            base_y + shadow_offset_y, 
             Color::new(0.0, 0.0, 0.0, 0.45),
             DrawTextureParams {
                 source: Some(shadow_source),
